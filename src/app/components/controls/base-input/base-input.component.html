@@ -1,0 +1,35 @@
+<form #form='ngForm' class="base-form">
+
+  <input type="text"
+         [disabled]="edit"
+         (blur)="changeVisibility()"
+         ngModel
+         name="type"
+         class="base-input-text"
+
+  >
+  <input type="button"
+         (click)="changeVisibility()"
+         value="ex"
+         ngModel
+         name="editButton"
+         class="base-input-btn"
+         *ngIf="0"
+
+  >
+  <input type="text"
+         class="base-input"
+         [(ngModel)]="control.count"
+         ngModel
+         name="money"
+         class="base-input-text"
+
+  >
+  <input type="button"
+         value="-"
+         (click)="returnID()"
+         class="base-input-btn"
+         *ngIf="0"
+  >
+
+</form>

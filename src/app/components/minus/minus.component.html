@@ -1,0 +1,16 @@
+<div class="module-minus">
+  <div class="module-minus-header">Minus</div>
+  <div>
+    <app-manage-button [buttonText]="'+'" [eventType]='2'></app-manage-button>
+    <app-manage-button [buttonText]="'-'" [eventType]='3'></app-manage-button>
+  </div>
+  <form class="module-minus-main">
+
+    <div *ngFor="let control of _store.minusService.controls" class="module-minus-controls">
+      <app-base-input [control]="control" (emitId)="_store.minusService.removeExactControl(control.id)">
+      </app-base-input>
+    </div>
+
+  </form>
+
+</div>

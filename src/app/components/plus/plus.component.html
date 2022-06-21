@@ -1,0 +1,15 @@
+<div class="module-plus">
+<div class="module-plus-header">Plus</div>
+  <div>
+    <app-manage-button [buttonText]="'+'" [eventType]='0'></app-manage-button>
+    <app-manage-button [buttonText]="'-'" [eventType]='1'></app-manage-button>
+  </div>
+<div class="module-plus-main">
+
+  <div *ngFor="let control of _store.plusService.controls" class="module-plus-controls">
+    <app-base-input [control]="control" (emitId)="_store.plusService.removeExactControl(control.id)">
+    </app-base-input>
+  </div>
+
+</div>
+</div>
