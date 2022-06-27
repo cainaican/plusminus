@@ -3,5 +3,8 @@ export enum EventTypeHandler {
   PlusAdd,
   PlusRem,
   MinusAdd,
-  MinusRem
+  MinusRem,
+  DebtAdd,
+  DebtRem
 }
+//todo сделать адекватный эмиттер

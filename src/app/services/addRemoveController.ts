@@ -2,7 +2,6 @@ import {BaseControl} from "../interfaces/BaseControl";
 
 export abstract class AddRemoveController {
 
-
   protected abstract get length(): number
 
   protected abstract get controls(): BaseControl[]

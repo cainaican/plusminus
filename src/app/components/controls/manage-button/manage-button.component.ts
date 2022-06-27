@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PlusService} from "../../../services/plus/plus.service";
-import {MinusService} from "../../../services/minus/minus.service";
 import {EventTypeHandler} from "../../../types/enums";
-import {BaseControl} from "../../../interfaces/BaseControl";
+import {BaseControl, DebtControl} from "../../../interfaces/BaseControl";
 import {CommonService} from "../../../services/common.service";
 
 @Component({
@@ -22,20 +20,24 @@ export class ManageButtonComponent implements OnInit {
 
   eventHandler(){
     switch (this.eventType){
-      case EventTypeHandler.MinusAdd: this._store.minusService.addControl(this.addMinusForm());
+      case EventTypeHandler.MinusAdd: this._store.currentMonth.minusModel.addControl(this.addMinusForm());
         break;
-      case EventTypeHandler.MinusRem: this._store.minusService.removeControl();
+      case EventTypeHandler.MinusRem: this._store.currentMonth.minusModel.removeControl();
         break;
-      case EventTypeHandler.PlusAdd: this._store.plusService.addControl(this.addPlusForm());
+      case EventTypeHandler.PlusAdd: this._store.currentMonth.plusModel.addControl(this.addPlusForm());
         break;
-      case EventTypeHandler.PlusRem: this._store.plusService.removeControl();
+      case EventTypeHandler.PlusRem: this._store.currentMonth.plusModel.removeControl();
+        break;
+      case EventTypeHandler.DebtAdd: this._store.currentMonth.debtsModel.addControl(this.addDebtForm());
+        break;
+      case EventTypeHandler.DebtRem: this._store.currentMonth.debtsModel.removeControl();
         break;
       default: alert('add event handler')
     }
   }
   addMinusForm(){
     const form: BaseControl = {
-      id: this._store.minusService.controls.length + 1,
+      id: this._store.currentMonth.minusModel.controls.length + 1,
       name: 'find the name',
       type: 'minus',
       count: 0
@@ -44,10 +46,20 @@ export class ManageButtonComponent implements OnInit {
   }
   addPlusForm(){
     const form: BaseControl = {
-      id: this._store.plusService.controls.length + 1,
+      id: this._store.currentMonth.plusModel.controls.length + 1,
       name: 'find the name',
       type: 'plus',
       count: 0
+    }
+    return form
+  }
+  addDebtForm(){
+    const form: DebtControl = {
+      id: this._store.currentMonth.plusModel.controls.length + 1,
+      name: 'find the name',
+      type: 'plus',
+      count: 0,
+      commonDebtCount: 0
     }
     return form
   }

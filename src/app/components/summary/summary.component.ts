@@ -14,9 +14,10 @@ export class SummaryComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(){
-    this._store.minusService.countSumm()
-    this._store.plusService.countSumm()
+    this._store.currentMonth.minusModel.countSumm()
+    this._store.currentMonth.plusModel.countSumm()
     this._store.countResult()
+    this._store.countTotalResult()
   }
 
 

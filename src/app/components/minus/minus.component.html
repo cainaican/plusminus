@@ -6,11 +6,10 @@
   </div>
   <form class="module-minus-main">
 
-    <div *ngFor="let control of _store.minusService.controls" class="module-minus-controls">
-      <app-base-input [control]="control" (emitId)="_store.minusService.removeExactControl(control.id)">
+    <div *ngFor="let control of _store.currentMonth.minusModel.controls" class="module-minus-controls">
+      <app-base-input [control]="control" (emitId)="_store.currentMonth.minusModel.removeExactControl(control.id)">
       </app-base-input>
     </div>
 
   </form>
-
 </div>

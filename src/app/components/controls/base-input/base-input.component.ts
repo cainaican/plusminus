@@ -21,7 +21,7 @@ export class BaseInputComponent implements OnInit {
   onChange(){
     console.log(this.title)
   }
-  changeVisibility() {
+  changeVisibility(event: any) {
     this.edit = !this.edit
   }
   returnID() {

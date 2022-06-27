@@ -4,3 +4,6 @@ export interface BaseControl {
   name: string,
   count: number
 }
+export interface DebtControl extends BaseControl{
+  commonDebtCount: number
+}

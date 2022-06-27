@@ -1,0 +1,23 @@
+<div class="module-debts">
+  <div class="module-debts-header">
+    <span>Debts</span>
+    <div>
+      <app-manage-button [buttonText]="'+'" [eventType]='4'></app-manage-button>
+      <app-manage-button [buttonText]="'-'" [eventType]='5'></app-manage-button>
+    </div>
+  </div>
+
+  <form class="module-debts-main">
+
+    <div *ngFor="let control of _store.currentMonth.debtsModel.controls" class="module-debts-controls">
+      <app-base-input [control]="control" (emitId)="_store.currentMonth.debtsModel.removeExactControl(control.id)">
+      </app-base-input>
+    </div>
+
+  </form>
+  <div class="module-debts-footer">
+    <span class="module-debts-caption">Summary Count of Debts</span>
+    <input type="text" [(ngModel)]="_store.currentMonth.debtsModel.summ">
+  </div>
+
+</div>

@@ -1,9 +1,22 @@
 <div class="module-summary">
-<div class="module-summary-header">Summary</div>
-<form class="module-summary-main">
+  <div class="module-summary-header">Summary</div>
+  <form class="module-summary-main">
 
   <input type="text" disabled value="result">
-  <input type="text" disabled [value]="_store.result">
+  <input type="text" disabled [value]="_store.currentMonth.result">
 
 </form>
+  <div class="module-summary-footer">
+    <div class="module-summary-save">
+      <span class="base-pillow-caption">Pillow</span>
+      <input type="text"
+             [(ngModel)]="_store.currentMonth.pillow"
+             class="base-pillow-count"
+      >
+    </div>
+    <div class="module-summary-touch">
+      <span class="base-touchLeft-caption" >TouchLeft</span>
+      <input type="text" [(ngModel)]="_store.currentMonth.touchLeft" class="base-touchLeft-count" >
+    </div>
+  </div>
 </div>

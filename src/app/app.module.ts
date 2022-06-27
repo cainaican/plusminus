@@ -11,6 +11,8 @@ import { BaseButtonComponent } from './components/controls/base-button/base-butt
 import { ManageButtonComponent } from './components/controls/manage-button/manage-button.component';
 import {FormsModule} from "@angular/forms";
 import { SummaryComponent } from './components/summary/summary.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { DebtsComponent } from './components/debts/debts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SummaryComponent } from './components/summary/summary.component';
     BaseInputComponent,
     BaseButtonComponent,
     ManageButtonComponent,
-    SummaryComponent
+    SummaryComponent,
+    FooterComponent,
+    DebtsComponent
   ],
     imports: [
         BrowserModule,

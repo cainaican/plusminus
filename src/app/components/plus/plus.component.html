@@ -1,15 +1,30 @@
 <div class="module-plus">
-<div class="module-plus-header">Plus</div>
-  <div>
-    <app-manage-button [buttonText]="'+'" [eventType]='0'></app-manage-button>
-    <app-manage-button [buttonText]="'-'" [eventType]='1'></app-manage-button>
+  <div class="module-plus-header">
+    <span>Plus</span>
+    <div>
+      <app-manage-button [buttonText]="'+'" [eventType]='0'></app-manage-button>
+      <app-manage-button [buttonText]="'-'" [eventType]='1'></app-manage-button>
+    </div>
   </div>
-<div class="module-plus-main">
+  <div class="module-plus-main">
 
-  <div *ngFor="let control of _store.plusService.controls" class="module-plus-controls">
-    <app-base-input [control]="control" (emitId)="_store.plusService.removeExactControl(control.id)">
-    </app-base-input>
+    <div *ngFor="let control of _store.currentMonth.plusModel.controls" class="module-plus-controls">
+      <app-base-input [control]="control" (emitId)="_store.currentMonth.plusModel.removeExactControl(control.id)">
+      </app-base-input>
+    </div>
+
   </div>
-
-</div>
+  <div class="module-plus-footer">
+    <div class="module-plus-save">
+      <span class="base-save-caption" >Save</span>
+      <input type="text"
+             [(ngModel)]="_store.currentMonth.plusModel.save"
+             class="base-save-count"
+      >
+    </div>
+    <div class="module-plus-touch">
+      <span class="base-touch-caption" >Touch</span>
+      <input type="text" [(ngModel)]="_store.currentMonth.plusModel.touch" class="base-touch-count" >
+    </div>
+  </div>
 </div>

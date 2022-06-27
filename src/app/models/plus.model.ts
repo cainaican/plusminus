@@ -1,17 +1,15 @@
-import {Injectable} from '@angular/core';
-import { BaseControl} from "../../interfaces/BaseControl";
-import {AddRemoveController} from "../addRemoveController";
+import {BaseControl} from "../interfaces/BaseControl";
+import {AddRemoveController} from "../services/addRemoveController";
 
-@Injectable({
-  providedIn: 'root'
-})
-export class MinusService extends AddRemoveController {
+export class PlusModel extends AddRemoveController {
 
   private _controls: BaseControl[] = [];
-  summ: number = 0
+  public summ: number = 0
+  public save: number = 0
+  public touch: number = 0
 
   constructor() {
-    super()
+    super();
     this._controls.push({id: 1, type: 'base', name: 'name', count: 0})
   }
 
@@ -35,11 +33,10 @@ export class MinusService extends AddRemoveController {
     this._controls = this._controls.filter(c => c.id !== id)
   }
 
-
   countSumm(){
-    this.summ = +this._controls.map((c) => c.count)
-      .reduce((a,b)=> Number(a) + Number(b))
+    const summ = this._controls.map((c) => c.count)
+      .reduce((a,b)=> Number(a) + Number(b));
+
+    this.summ = summ - this.save - this.touch
   }
-
-
 }
