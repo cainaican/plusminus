@@ -1,10 +1,22 @@
 .module-plus{
-  background-color: #71a261;
+  padding: 5px 10px;
+  background-color: rgb(113,208,140);
+  height: 100%;
   &-controls{
     display: block;
     width: 100%;
   }
+  &-title{
+    margin: 5px;
+    text-align: center;
+  }
   &-main{
     width: 100%;
   }
+}
+.module-manage-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  padding: 5px 0px;
 }

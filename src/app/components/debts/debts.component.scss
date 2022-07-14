@@ -1,0 +1,16 @@
+.module-debts{
+  padding: 5px 10px;
+  background-color: rgb(255,208,190);
+  height: 100%;
+  &-title{
+    margin: 5px;
+    text-align: center;
+  }
+
+}
+.module-manage-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  padding: 5px 0px;
+}

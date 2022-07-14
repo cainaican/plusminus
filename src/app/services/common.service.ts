@@ -6,6 +6,7 @@ import {DebtsModel} from "../models/debts.model";
 export interface IMonth {
   id: Date
   month: number
+  monthName: string
   plusModel: PlusModel
   minusModel: MinusModel
   pillow: number
@@ -25,6 +26,7 @@ export class CommonService {
   public currentMonth: IMonth = {
     id: new Date(),
     month: new Date().getMonth(),
+    monthName: "Июнь",
     plusModel: new PlusModel(),
     minusModel: new MinusModel(),
     pillow: 0,
@@ -45,21 +47,26 @@ export class CommonService {
   }
 
   addMonth(){
-    prompt('Название месяца')
-    const month: IMonth = {
-      id: new Date(),
-      month: new Date().getMonth(),
-      plusModel: new PlusModel(),
-      minusModel: new MinusModel(),
-      pillow: 0,
-      touchLeft: 0,
-      result: 0,
-      debtsModel: new DebtsModel(),
-      totalResult: 0,
-      totalDebt:  0
+    const monthName = prompt('Название месяца');
+    if(monthName){
+      const month: IMonth = {
+        id: new Date(),
+        month: new Date().getMonth(),
+        plusModel: new PlusModel(),
+        minusModel: new MinusModel(),
+        monthName: monthName,
+        pillow: 0,
+        touchLeft: 0,
+        result: 0,
+        debtsModel: new DebtsModel(),
+        totalResult: 0,
+        totalDebt:  0
+      }
+      this.months.push(month)
+      this.currentMonth = this.months[this.months.length - 1]
+    } else {
+      this.addMonth()
     }
-    this.months.push(month)
-    this.currentMonth = this.months[this.months.length - 1]
   }
 
   nextMonth(){
