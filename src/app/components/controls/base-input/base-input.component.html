@@ -4,7 +4,7 @@
     <input type="text"
            [disabled]="edit"
            (blur)="changeVisibility($event)"
-           ngModel
+           [(ngModel)]="control.name"
            name="type"
            class="base-input-left"
     >
@@ -14,6 +14,7 @@
          [(ngModel)]="control.count"
          ngModel
          name="money"
+
          class="base-input-right"
 
   >

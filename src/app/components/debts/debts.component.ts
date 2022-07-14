@@ -4,7 +4,7 @@ import {CommonService} from "../../services/common.service";
 @Component({
   selector: 'app-debts',
   templateUrl: './debts.component.html',
-  styleUrls: ['./debts.component.scss']
+  styleUrls: ['./debts.component.scss'],
 })
 export class DebtsComponent implements OnInit, DoCheck {
 

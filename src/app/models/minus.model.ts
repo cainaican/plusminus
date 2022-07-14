@@ -6,8 +6,13 @@ export class MinusModel extends AddRemoveController {
   private _controls: BaseControl[] = [];
   summ: number = 0
 
-  constructor() {
+  constructor(savedData?: MinusModel) {
     super()
+    if(savedData){
+      this._controls = savedData._controls
+      this.summ = savedData.summ
+      return
+    }
     this._controls.push({id: 1, type: 'base', name: 'name', count: 0})
   }
 

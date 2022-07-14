@@ -12,8 +12,14 @@ export class DebtsModel extends AddRemoveController {
   }];
   summ: number = 0
 
-  constructor() {
+  constructor(savedData?: DebtsModel) {
     super()
+    if(savedData){
+      this._controls = savedData._controls
+      this.summ = savedData.summ
+      return
+    }
+
   }
 
   get length(): number {

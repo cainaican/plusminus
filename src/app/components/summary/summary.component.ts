@@ -1,10 +1,10 @@
-import { Component, DoCheck, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, DoCheck, OnInit} from '@angular/core';
 import {CommonService} from "../../services/common.service";
 
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.scss']
+  styleUrls: ['./summary.component.scss'],
 })
 export class SummaryComponent implements OnInit, DoCheck {
 
@@ -18,6 +18,9 @@ export class SummaryComponent implements OnInit, DoCheck {
     this._store.currentMonth.plusModel.countSumm()
     this._store.countResult()
     this._store.countTotalResult()
+    localStorage.setItem('months', JSON.stringify(this._store.months))
+    localStorage.setItem('currentMonth', JSON.stringify(this._store.currentMonth))
+
   }
 
 

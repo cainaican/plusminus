@@ -8,8 +8,15 @@ export class PlusModel extends AddRemoveController {
   public save: number = 0
   public touch: number = 0
 
-  constructor() {
+  constructor(savedData?: PlusModel) {
     super();
+    if(savedData){
+      this._controls = savedData._controls
+      this.save = savedData.save
+      this.touch = savedData.touch
+      this.summ = savedData.summ
+      return
+    }
     this._controls.push({id: 1, type: 'base', name: 'name', count: 0})
   }
 
