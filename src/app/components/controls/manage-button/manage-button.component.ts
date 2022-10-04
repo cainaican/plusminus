@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {EventTypeHandler} from "../../../types/enums";
-import {BaseControl, DebtControl} from "../../../interfaces/BaseControl";
+import {BaseControl, DebtControl} from "../../../../interfaces/base-control";
 import {CommonService} from "../../../services/common.service";
 
 @Component({

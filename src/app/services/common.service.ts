@@ -1,6 +1,6 @@
-import {PlusModel} from "../models/plus.model";
-import {MinusModel} from "../models/minus.model";
-import {DebtsModel} from "../models/debts.model";
+import {PlusModel} from "../../models/plus.model";
+import {MinusModel} from "../../models/minus.model";
+import {DebtsModel} from "../../models/debts.model";
 import {Injectable} from "@angular/core";
 
 export interface IMonth {

@@ -1,32 +1,47 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "strictInjectionParameters": true,
+    "disableTypeScriptVersionCheck": true
+  },
+  "compileOnSave": true,
   "compilerOptions": {
+    "paths": {
+      "@insys-core": [
+        "./insys"
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
-    "module": "es2020",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [
+      "jasmine",
+      "node",
+    ],
     "lib": [
+      "es2017",
+      "es2018",
+      "es2019",
       "es2020",
-      "dom"
-    ]
+      "ES2021.String",
+      "dom",
+      "ScriptHost"
+    ],
+    "module": "es2020",
+    "moduleResolution": "node",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "watch": true
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+  "exclude": [
+    "node_modules"
+  ]
 }

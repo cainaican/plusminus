@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BaseControl} from "../../../interfaces/BaseControl";
+import {BaseControl} from "../../../../interfaces/base-control";
 
 @Component({
   selector: 'app-base-input',

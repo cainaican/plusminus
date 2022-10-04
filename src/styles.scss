@@ -5,3 +5,13 @@ body {
   margin: 0 auto;
   padding: 0px 10px;
 }
+.tooltip{
+  display: none;
+  &.show-tooltip{
+    display: block;
+    position: absolute;
+  }
+}
+.tooltip-container{
+  color: coral;
+}

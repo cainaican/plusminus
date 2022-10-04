@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, DoCheck, OnInit} from '@angular/core';
-import {CommonService} from "../../services/common.service";
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-summary',

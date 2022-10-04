@@ -1,4 +1,4 @@
-import {BaseControl} from "../interfaces/BaseControl";
+import {BaseControl} from "../../interfaces/base-control";
 
 export abstract class AddRemoveController {
 
