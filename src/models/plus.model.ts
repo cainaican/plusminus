@@ -1,4 +1,4 @@
-import {BaseControl} from "../interfaces/BaseControl";
+import {BaseControl} from "../interfaces/base-control";
 import {AddRemoveController} from "../services/addRemoveController";
 
 export class PlusModel extends AddRemoveController {

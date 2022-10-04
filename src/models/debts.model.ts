@@ -1,4 +1,4 @@
-import {DebtControl} from "../interfaces/BaseControl";
+import {DebtControl} from "../interfaces/base-control";
 import {AddRemoveController} from "../services/addRemoveController";
 
 export class DebtsModel extends AddRemoveController {
