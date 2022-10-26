@@ -1,0 +1,28 @@
+<form #form='ngForm' class="base-form">
+
+  <div (dblclick)="changeVisibility($event)">
+    <input type="text"
+           [disabled]="edit"
+           (blur)="changeVisibility($event)"
+           [(ngModel)]="control.name"
+           name="type"
+           class="base-input-left"
+    >
+  </div>
+  <input type="text"
+         class="base-input"
+         [(ngModel)]="control.count"
+         ngModel
+         name="money"
+
+         class="base-input-right"
+
+  >
+  <input type="button"
+         value="-"
+         (click)="returnID()"
+         class="base-input-btn"
+         *ngIf="0"
+  >
+
+</form>

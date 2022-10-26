@@ -1,0 +1,12 @@
+<footer class="layout-footer">
+  <div class="module-month-buttons">
+    <input type="button" value="<" (click)="_store.previosMonth()">
+    <input type="button" value="add month" (click)="_store.addMonth()">
+    <input type="button" value=">" (click)="_store.nextMonth()">
+  </div>
+  <div class="module-results">
+    <span class="module-results-pillowsCaps">Summary Pillow</span>
+    <br>
+    <span class="module-results-pillowsCount">{{_store.currentMonth.totalResult}}</span>
+  </div>
+</footer>
