@@ -1,10 +1,18 @@
 <div class="module-auth" >
-  <form>
+  <form [formGroup]="this.form" novalidate>
+    
     <div class="base-login">
-      <input type="text" name="username" >
+      <input type="email" 
+      formControlName="email"
+      >
     </div>
     <div class="base-password">
-      <input type="text" name="password">
+      <input 
+      type="text" 
+      formControlName="password"
+      name="password"
+     >
     </div>
+    <button type="submit" (click)="proceedLogin()">войти</button>
   </form>
 </div>

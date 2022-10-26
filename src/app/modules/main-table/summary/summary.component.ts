@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, DoCheck, OnInit} from '@angular/core';
+import { Component, DoCheck, OnInit} from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({

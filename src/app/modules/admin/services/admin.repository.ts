@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Admin} from "../../../models/admin";
+import { Admin } from "../models/admin";
 
 @Injectable()
 export class AdminRepository {

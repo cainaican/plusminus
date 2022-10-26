@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -12,24 +14,34 @@ export class LoginComponent implements OnInit {
   protected form: FormGroup;
   private respData: any;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private _authService: AuthService,
+    private _fb: FormBuilder,
+    private _router: Router
+    ) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      username: new FormControl(null,[ Validators.required] ),
-      password: new FormControl(null,[ Validators.required, Validators.min(8)] ),
+    this.form = this._fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required]],
     })
   }
 
-  proceedLogin(){
-    if(this.form.valid){
-      this.authService.poceedLogin(this.form.value)
-        .subscribe(result => {
-          if (result) {
-            this.respData = result;
-            localStorage.setItem('jwtToken', this.respData.jwtToken)
-          }
-        })
+  proceedLogin() {
+    if (this.form.valid) {
+       this._authService.login(this.form.value)
+         .subscribe({
+           next: result => {
+             if (result) {
+               this.respData = result.toString();
+               document.cookie = `${this.respData}; max-age=86400`
+               this._router.navigate(['user'])
+             }
+           },
+           error: err => {
+             console.dir(err.message)
+           }
+         })
     }
   }
 

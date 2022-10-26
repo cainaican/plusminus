@@ -1,0 +1,18 @@
+<div class="module-auth" >
+  <form class="module-registration" [formGroup]="this.form" novalidate>
+
+    <div class="base-login">
+      <input type="email"
+      formControlName="email"
+      >
+    </div>
+    <div class="base-password">
+      <input
+      type="text"
+      formControlName="password"
+      name="password"
+     >
+    </div>
+    <button type="submit" (click)="proceedRegistration()">Зарегистрироваться</button>
+  </form>
+</div>
